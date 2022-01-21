@@ -65,71 +65,55 @@ int main(){
     string url;
     string difficulty;
 
+    cin.ignore();
     cout<<"Please enter the title: "<<endl;
-    cin>>title;
+    getline(cin, title);
 
     cout<<"Please enter the source: "<<endl;
-    cin>>source;
+    getline(cin, source);
 
     cout<<"Please enter the source url: "<<endl;
     cin>>url;
 
+    cin.ignore();
     cout<<"Please enter the difficulty level: "<<endl;
-    cin>>difficulty;
+    getline(cin, difficulty);
 
     //create and open REAMDE.md file
     ofstream readmeFile("README.md");
     readmeFile
-    <<"## "+title+"   "
-    <<endl
-    <<endl
-    <<"**Source**: ["+source+"]("+url+")   "
-    <<endl
-    <<"**Difficulty**: "+difficulty+"   "
-    <<endl
-    <<"**Brief**:    "
-    <<endl
-    <<endl
-    <<"### Example   "
-    <<endl
-    <<"**Input**: `` ``   "
-    <<endl
-    <<"**Output**: `` ``   "
-    <<endl
-    <<"**Explanation**:   "
-    <<endl
+    <<"## "+title+"   \n"
+    <<"**Source**: ["+source+"]("+url+")   \n"
+    <<"**Difficulty**: "+difficulty+"   \n"
+    <<"**Brief**:    \n\n"
+    <<"### Example   \n"
+    <<"**Input**: `` ``   \n"
+    <<"**Output**: `` ``   \n"
+    <<"**Explanation**:   \n"
     <<endl;
     
     if(solutions<2){
       readmeFile
-      <<"### Solution   "
-      <<endl
-      <<"**Runtime**: `` ``   "
-      <<endl
-      <<"**Memory**: `` ``   "
-      <<endl
+      <<"### Solution   \n"
+      <<"**Runtime**: `` ``   \n"
+      <<"**Memory**: `` ``   \n"
       <<"```"
       <<endl
       <<endl
-      <<"```"
-      <<endl
+      <<"``` \n"
       <<endl;
     }else{
       int i=1;
 
       while(solutions>0){
       readmeFile
-       <<"### Solution "+to_string(i)+"   "
-       <<endl
-       <<"**Runtime**: `` ``   "
-       <<endl
-       <<"**Memory**: `` ``   "
-       <<endl
+       <<"### Solution "+to_string(i)+"   \n"
+       <<"**Runtime**: `` ``   \n"
+       <<"**Memory**: `` ``   \n"
        <<"```"
        <<endl
        <<endl
-       <<"```"
-       <<endl
+       <<"```   \n"
        <<endl;
 
        i++;
